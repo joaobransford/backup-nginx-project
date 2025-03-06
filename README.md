@@ -3,6 +3,7 @@
 📖 Introdução: 
 
 Este projeto automatiza o backup dos arquivos de log do Nginx (access.log e error.log) utilizando serviços da AWS. Um script shell é responsável por enviar os logs periodicamente para um bucket no Amazon S3. Assim que os arquivos chegam ao S3, um evento aciona uma notificação via Amazon SNS, enviando um alerta por e-mail sobre a conclusão do backup. 
+
 Essa solução garante a integridade e a segurança dos logs, facilitando a auditoria e o monitoramento do ambiente. 
 
 🛠️ Serviços AWS Utilizados 
