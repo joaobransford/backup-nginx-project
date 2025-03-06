@@ -1,20 +1,35 @@
-📌 Objetivo do Projeto
+📌 Backup Automático de Logs do Nginx com Notificação via AWS SNS 
 
-Este projeto automatiza o backup de logs do servidor Nginx utilizando um script que:
+📖 Introdução: 
 
-  1. Faz o backup dos arquivos /var/log/nginx/access.log e /var/log/nginx/error.log.
-  2. Envia os arquivos de backup para um bucket no S3.
-  3. Dispara uma notificação via SNS por e-mail sempre que um novo backup for enviado.
+Este projeto automatiza o backup dos arquivos de log do Nginx (access.log e error.log) utilizando serviços da AWS. Um script shell é responsável por enviar os logs periodicamente para um bucket no Amazon S3. Assim que os arquivos chegam ao S3, um evento aciona uma notificação via Amazon SNS, enviando um alerta por e-mail sobre a conclusão do backup. 
 
-🛠 Serviços AWS Utilizados
+Essa solução garante a integridade e a segurança dos logs, facilitando a auditoria e o monitoramento do ambiente. 
 
- 1. Amazon EC2 → Servidor Linux rodando Nginx, responsável por gerar os logs.
- 2. Amazon S3 → Armazena os arquivos de backup dos logs.
- 3. Amazon SNS → Envia notificações por e-mail quando um novo backup é salvo no S3.
- 
-⚙️ Como Funciona?
+🛠️ Serviços AWS Utilizados 
 
- 1. O servidor EC2 executa periodicamente um script de backup.
- 2. O script copia os logs e os envia para um bucket S3.
- 3. O S3 possui uma configuração para acionar o SNS ao receber novos arquivos.
- 4. O SNS envia um e-mail informando a chegada de um novo backup.
+1️⃣ Amazon EC2 (Elastic Compute Cloud) 
+
+Servidor virtual onde o Nginx está instalado e configurado para gerar os logs. 
+
+Responsável por executar o script de backup. 
+
+2️⃣ Amazon S3 (Simple Storage Service) 
+
+Armazena os arquivos de log enviados pelo script. 
+
+Possui um evento configurado para detectar novos arquivos e acionar o SNS. 
+
+3️⃣ Amazon SNS (Simple Notification Service) 
+
+Serviço responsável por enviar notificações por e-mail assim que os logs chegam no S3. 
+
+⚙️ Como Funciona? 
+
+O servidor EC2 gera os arquivos de log do Nginx (access.log e error.log). 
+
+Um script de backup copia esses arquivos e os envia para um bucket no S3. 
+
+O S3 detecta a chegada dos novos arquivos e dispara um evento. 
+
+Esse evento aciona um tópico do SNS, que envia um e-mail notificando o backup. 
