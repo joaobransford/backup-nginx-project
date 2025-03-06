@@ -8,9 +8,9 @@ Este projeto automatiza o backup de logs do servidor Nginx utilizando um script 
 
 🛠 Serviços AWS Utilizados
 
- 1.Amazon EC2 → Servidor Linux rodando Nginx, responsável por gerar os logs.
- 2.Amazon S3 → Armazena os arquivos de backup dos logs.
- 3.Amazon SNS → Envia notificações por e-mail quando um novo backup é salvo no S3.
+ 1. Amazon EC2 → Servidor Linux rodando Nginx, responsável por gerar os logs.
+ 2. Amazon S3 → Armazena os arquivos de backup dos logs.
+ 3. Amazon SNS → Envia notificações por e-mail quando um novo backup é salvo no S3.
  
 ⚙️ Como Funciona?
 
