@@ -3,8 +3,8 @@
 Este projeto automatiza o backup de logs do servidor Nginx utilizando um script que:
 
   1. Faz o backup dos arquivos /var/log/nginx/access.log e /var/log/nginx/error.log.
-  2.Envia os arquivos de backup para um bucket no S3.
-  3.Dispara uma notificação via SNS por e-mail sempre que um novo backup for enviado.
+  2. Envia os arquivos de backup para um bucket no S3.
+  3. Dispara uma notificação via SNS por e-mail sempre que um novo backup for enviado.
 
 🛠 Serviços AWS Utilizados
 
