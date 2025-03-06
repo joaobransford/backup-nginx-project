@@ -1,10 +1,12 @@
 📌 Backup Automático de Logs do Nginx com Notificação via AWS SNS 
 
+
 📖 Introdução: 
 
 Este projeto automatiza o backup dos arquivos de log do Nginx (access.log e error.log) utilizando serviços da AWS. Um script shell é responsável por enviar os logs periodicamente para um bucket no Amazon S3. Assim que os arquivos chegam ao S3, um evento aciona uma notificação via Amazon SNS, enviando um alerta por e-mail sobre a conclusão do backup. 
 
 Essa solução garante a integridade e a segurança dos logs, facilitando a auditoria e o monitoramento do ambiente. 
+
 
 🛠️ Serviços AWS Utilizados 
 
@@ -20,7 +22,8 @@ Essa solução garante a integridade e a segurança dos logs, facilitando a audi
 
 3️⃣ Amazon SNS (Simple Notification Service) 
 
-1. Serviço responsável por enviar notificações por e-mail assim que os logs chegam no S3. 
+1. Serviço responsável por enviar notificações por e-mail assim que os logs chegam no S3.
+
 
 ⚙️ Como Funciona? 
 
